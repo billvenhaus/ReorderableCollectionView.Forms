@@ -1,0 +1,53 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras/2.0.41">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.0;netstandard2.0;Xamarin.iOS10;MonoAndroid10.0;</TargetFrameworks>
+    <TargetFrameworks Condition=" '$(OS)' == 'Windows_NT' ">$(TargetFrameworks);uap10.0.16299;</TargetFrameworks>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AssemblyName>ReorderableCollectionView.Forms</AssemblyName>
+    <RootNamespace>ReorderableCollectionView.Forms</RootNamespace>    
+    <PackageId>ReorderableCollectionView.Forms</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Bill Venhaus</Authors>
+    <Description>ReorderableCollectionView for Xamarin.Forms</Description>
+    <Copyright>Copyright 2021</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/billvenhaus/ReorderableCollectionView.Forms</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/billvenhaus/ReorderableCollectionView.Forms</RepositoryUrl>
+    <PackageTags>xamarin forms reorderablecollectionview collectionview xamarinforms reorderablecollectionview.forms xamarin.forms.collectionview</PackageTags>
+  </PropertyGroup>  
+  
+  <!-- Define what happens on build and release -->
+   <PropertyGroup Condition=" '$(Configuration)'=='Debug' ">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition=" '$(Configuration)'=='Release' ">
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <DebugType>pdbonly</DebugType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2291" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
+    <Compile Include="Platforms\iOS\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
+    <Compile Include="Platforms\Android\**\*.cs" />
+  </ItemGroup>
+
+    <ItemGroup Condition=" $(TargetFramework.StartsWith('uap10')) ">
+    <Compile Include="Platforms\UWP\**\*.cs" />
+  </ItemGroup>
+
+</Project>
