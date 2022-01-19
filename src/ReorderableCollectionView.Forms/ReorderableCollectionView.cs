@@ -28,10 +28,10 @@ namespace ReorderableCollectionView.Forms
 			set { SetValue(CanReorderItemsProperty, value); }
 		}
 
-		public static readonly BindableProperty ReorderCompletedCommandProperty = BindableProperty.Create("ReorderCompletedCommand", typeof(bool), typeof(ReorderableCollectionView), null);
-		public Command ReorderCompletedCommand
+		public static readonly BindableProperty ReorderCompletedCommandProperty = BindableProperty.Create("ReorderCompletedCommand", typeof(ICommand), typeof(ReorderableCollectionView), null);
+		public ICommand ReorderCompletedCommand
         {
-			get { return (Command)GetValue(ReorderCompletedCommandProperty); }
+			get { return (ICommand)GetValue(ReorderCompletedCommandProperty); }
 			set { SetValue(ReorderCompletedCommandProperty, value); }
         }
 
