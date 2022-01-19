@@ -2,6 +2,8 @@
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
@@ -24,6 +26,20 @@ namespace ReorderableCollectionView.Forms
 		{
 			get { return (bool)GetValue(CanReorderItemsProperty); }
 			set { SetValue(CanReorderItemsProperty, value); }
+		}
+
+		public static readonly BindableProperty ReorderCompletedCommandProperty = BindableProperty.Create("ReorderCompletedCommand", typeof(bool), typeof(ReorderableCollectionView), null);
+		public Command ReorderCompletedCommand
+        {
+			get { return (Command)GetValue(ReorderCompletedCommandProperty); }
+			set { SetValue(ReorderCompletedCommandProperty, value); }
+        }
+
+		public static readonly BindableProperty ReorderCompletedCommandParameterProperty = BindableProperty.Create("ReorderCompletedCommandParameter", typeof(object), typeof(ReorderableCollectionView), null);
+		public object ReorderCompletedCommandParameter
+		{
+			get { return GetValue(ReorderCompletedCommandParameterProperty); }
+			set { SetValue(ReorderCompletedCommandParameterProperty, value); }
 		}
 
 		public event EventHandler ReorderCompleted;
@@ -111,7 +127,11 @@ namespace ReorderableCollectionView.Forms
 			base.OnPropertyChanged(propertyName);
 		}
 
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		public void SendReorderCompleted() => ReorderCompleted?.Invoke(this, EventArgs.Empty);
-	}
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public void SendReorderCompleted()
+        {
+            ReorderCompleted?.Invoke(this, EventArgs.Empty);
+			ReorderCompletedCommand?.Execute(ReorderCompletedCommandParameter);
+        }
+    }
 }
