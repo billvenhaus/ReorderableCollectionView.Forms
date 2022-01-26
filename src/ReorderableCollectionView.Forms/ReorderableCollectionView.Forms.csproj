@@ -15,6 +15,7 @@
     <PackageProjectUrl>https://github.com/billvenhaus/ReorderableCollectionView.Forms</PackageProjectUrl>
     <RepositoryUrl>https://github.com/billvenhaus/ReorderableCollectionView.Forms</RepositoryUrl>
     <PackageTags>xamarin forms reorderablecollectionview collectionview xamarinforms reorderablecollectionview.forms xamarin.forms.collectionview</PackageTags>
+    <ReleaseVersion>1.0.22031</ReleaseVersion>
   </PropertyGroup>  
   
   <!-- Define what happens on build and release -->
@@ -31,7 +32,8 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2291" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
+    <PackageReference Include="NETStandard.Library" Version="2.0.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -50,4 +52,7 @@
     <Compile Include="Platforms\UWP\**\*.cs" />
   </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="NETStandard.Library" />
+    </ItemGroup>
 </Project>
