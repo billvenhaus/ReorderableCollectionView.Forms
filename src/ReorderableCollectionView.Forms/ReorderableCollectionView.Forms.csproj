@@ -7,8 +7,8 @@
     <AssemblyName>ReorderableCollectionView.Forms</AssemblyName>
     <RootNamespace>ReorderableCollectionView.Forms</RootNamespace>    
     <PackageId>ReorderableCollectionView.Forms</PackageId>
-    <Version>1.0.1</Version>
-    <Authors>Bill Venhaus</Authors>
+    <Version>1.0.22052</Version>
+    <Authors>Bill Venhaus, Marco Siccardi</Authors>
     <Description>ReorderableCollectionView for Xamarin.Forms</Description>
     <Copyright>Copyright 2021</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -33,7 +33,6 @@
   
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
-    <PackageReference Include="NETStandard.Library" Version="2.0.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,7 +51,5 @@
     <Compile Include="Platforms\UWP\**\*.cs" />
   </ItemGroup>
 
-    <ItemGroup>
-      <None Remove="NETStandard.Library" />
-    </ItemGroup>
+
 </Project>
