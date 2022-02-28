@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="MSBuild.Sdk.Extras/3.0.44">
 	<PropertyGroup>
-		<TargetFrameworks>netstandard1.0;netstandard2.0;Xamarin.iOS10;MonoAndroid10.0;</TargetFrameworks>
+		<TargetFrameworks>netstandard2.0;Xamarin.iOS10;MonoAndroid10.0;</TargetFrameworks>
 		<TargetFrameworks Condition=" '$(OS)' == 'Windows_NT' ">$(TargetFrameworks);uap10.0.16299;</TargetFrameworks>
 		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
 		<AssemblyName>ReorderableCollectionView.Forms</AssemblyName>
 		<RootNamespace>ReorderableCollectionView.Forms</RootNamespace>
 		<PackageId>ReorderableCollectionView.Forms</PackageId>
-		<Version>1.0.22052</Version>
+		<Version>1.0.22081</Version>
 		<Authors>Bill Venhaus, Marco Siccardi</Authors>
 		<Description>ReorderableCollectionView for Xamarin.Forms</Description>
 		<Copyright>Copyright 2021</Copyright>
