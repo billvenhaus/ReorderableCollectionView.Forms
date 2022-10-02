@@ -29,7 +29,7 @@
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Xamarin.Forms" Version="5.0.0.2478" />
+		<PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
 	</ItemGroup>
 	<ItemGroup>
 		<Compile Include="*.cs" />
