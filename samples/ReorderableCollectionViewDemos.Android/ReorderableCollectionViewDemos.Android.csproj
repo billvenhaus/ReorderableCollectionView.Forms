@@ -98,11 +98,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\ReorderableCollectionView.Forms\ReorderableCollectionView.Forms.csproj">
-      <Project>{97111fcf-7fa3-49e9-8d7b-9d17c680e959}</Project>
+      <Project>{3A264849-CB41-4B7B-A449-EDEB488117DE}</Project>
       <Name>ReorderableCollectionView.Forms</Name>
     </ProjectReference>
     <ProjectReference Include="..\ReorderableCollectionViewDemos\ReorderableCollectionViewDemos.csproj">
-      <Project>{71030566-9182-473E-981D-D02753327369}</Project>
+      <Project>{F4190B46-0739-492F-B459-532ECC82E038}</Project>
       <Name>ReorderableCollectionViewDemos</Name>
     </ProjectReference>
   </ItemGroup>
